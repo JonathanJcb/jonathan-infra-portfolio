@@ -1,0 +1,105 @@
+.hero-project {
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem 4rem;
+}
+
+.hero-content {
+  max-width: 1000px;
+  margin: auto;
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  max-width: 900px;
+  font-size: 1.2rem;
+}
+
+.project-section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 3rem 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s ease;
+}
+
+.project-section.alt {
+  max-width: 1000px;
+  margin: auto;
+  padding: 1rem 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s ease;
+  background: var(--bg-secondary);
+}
+
+.project-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.screen-block {
+  margin-top: 2rem;
+  background: var(--bg-soft, #FAF9FB);
+  border: 1px solid var(--border-1, #DBD8E0);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.screen-block img {
+  width: 100%;
+  border-radius: 8px;
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+.screen-block img.zoomed {
+  transform: scale(2);
+  cursor: zoom-out;
+  z-index: 10;
+}
+
+.hero-buttons {
+  margin-top: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  background: var(--accent, #7C5CFF);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 1rem;
+  transition: 0.2s;
+}
+
+.btn.secondary {
+  background: #EAE7EC;
+  color: #211F26;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

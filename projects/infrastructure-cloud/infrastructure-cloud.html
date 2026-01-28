@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Infrastructure Hybride Sécurisée</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS GLOBAL -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <!-- CSS PROJET -->
+  <link rel="stylesheet" href="../../assets/css/projects.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <a href="../../index.html" class="logo">Jonathan JACOB SELVARATHINAM</a>
+    <ul>
+      <li><a href="#overview">Projet</a></li>
+      <li><a href="#schema">Schéma SI</a></li>
+      <li><a href="#security">Sécurité</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#monitoring">Supervision</a></li>
+      <li><a href="#pra">PCA / PRA</a></li>
+      <li><a href="#results">Résultats</a></li>
+      <li><a href="#learning">Apprentissage</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Infrastructure Hybride Sécurisée</h1>
+    <p>
+      Conception d’une infrastructure multi-sites sécurisée pour une entreprise fictive, 
+      intégrant virtualisation, haute disponibilité et accès nomade, avec migration progressive vers le cloud.
+    </p>
+    <div class="hero-buttons">
+      <a href="../../index.html#projects" class="btn">Retour aux projets</a>
+      <a class="cv-btn" href="../../assets/Jonathan_Jacob_CV.pdf" target="_blank">📄 CV</a>
+      </a>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<section id="overview" class="project-section">
+  <h2>Contexte & Objectifs</h2>
+  <p>
+    Ce projet vise à concevoir une infrastructure multi-sites sécurisée pour une entreprise fictive,
+    en centralisant les services critiques, assurant la haute disponibilité et permettant
+    une migration progressive vers le cloud. L’objectif est de garantir la continuité de service
+    tout en facilitant l’accès sécurisé pour les utilisateurs nomades et en optimisant
+    la supervision et la gestion de l’infrastructure.
+  </p>
+  <ul>
+    <li>Infrastructure virtualisée sur ESXi avec gestion centralisée</li>
+    <li>Interconnexion sécurisée via VPN IPsec multi-sites</li>
+    <li>Accès distant protégé pour les utilisateurs nomades</li>
+    <li>Supervision et alerting centralisés pour une visibilité complète</li>
+    <li>PCA et PRA pour assurer la continuité et la reprise d’activité</li>
+  </ul>
+</section>
+
+<section id="schema" class="project-section alt">
+  <h2>Schéma de l’Infrastructure SI</h2>
+  <p>
+    Architecture multi-sites composée de cinq sites interconnectés, avec des clusters pfSense assurant la redondance et la haute disponibilité, 
+    et des tunnels VPN IPsec sécurisés garantissant la confidentialité et l’intégrité des échanges entre les sites et pour les utilisateurs nomades. 
+    Chaque site intègre des services virtualisés et un monitoring centralisé pour optimiser la gestion et la continuité de l’infrastructure.
+  </p>
+
+  <div class="screen-block">
+    <img src="../../assets/projects/infra-cloud/SCHEMA-INFRA-SI.JPG" alt="Schéma SI ATP">
+    <p>Vue globale de l’architecture SI avec site principal, PRA et Datacenter cloud</p>
+  </div>
+</section>
+
+<section id="security" class="project-section">
+  <h2>Sécurité & Réseau</h2>
+  <p>
+    L’infrastructure multi-sites repose sur une architecture sécurisée et résiliente,
+    combinant firewalls redondants, tunnels VPN et segmentation réseau pour protéger
+    les services et les utilisateurs nomades.
+  </p>
+  <ul>
+    <li>Clusters pfSense en haute disponibilité avec CARP VIP</li>
+    <li>Tunnels VPN IPsec sécurisant l’interconnexion multi-sites</li>
+    <li>OpenVPN pour un accès distant protégé</li>
+    <li>Segmentation LAN / WAN / PRA pour isoler les services critiques</li>
+    <li>Filtrage réseau avancé par règles restrictives</li>
+    <li>Supervision centralisée et alerting pour le trafic et la sécurité</li>
+  </ul>
+
+  <div class="screen-block">
+    <img src="../../assets/projects/infra-cloud/PFSENSE-RULES.JPG" alt="pfSense rules">
+    <p>Règles de filtrage réseau sur le firewall pfSense</p>
+  </div>
+
+  <div class="screen-block">
+    <img src="../../assets/projects/infra-cloud/IPSEC.JPG" alt="VPN IPsec">
+    <p>Tunnels VPN IPsec entre les sites ATP</p>
+  </div>
+</section>
+
+<section id="services" class="project-section alt">
+  <h2>Services & Plateformes</h2>
+  <p>
+    L’infrastructure fournit des services critiques et des plateformes centralisées
+    pour les utilisateurs, en garantissant accessibilité, redondance et continuité
+    des données entre les sites.
+  </p>
+  <ul>
+    <li>Active Directory multi-sites avec DNS redondant pour la gestion des identités</li>
+    <li>Bureaux virtuels RDP offrant un accès sécurisé aux utilisateurs nomades</li>
+    <li>Stockage cloud interne via OpenMediaVault pour centraliser les données</li>
+    <li>Synchronisation automatique des données vers le site PRA pour la continuité</li>
+  </ul>
+
+  <div class="screen-block">
+    <img src="../../assets/projects/infra-cloud/AD-USERS.JPG" alt="Active Directory">
+    <p>Gestion des identités et des groupes via Active Directory</p>
+  </div>
+
+  <div class="screen-block">
+    <img src="../../assets/projects/infra-cloud/RDP.JPG" alt="Bureau virtuel">
+    <p>Accès distant sécurisé via bureau virtuel RDP</p>
+  </div>
+
+  <div class="screen-block">
+    <img src="../../assets/projects/infra-cloud/OMV.JPG" alt="OpenMediaVault">
+    <p>Plateforme de stockage cloud et partage de fichiers</p>
+  </div>
+</section>
+
+<section id="monitoring" class="project-section">
+  <h2>Supervision & Alerting</h2>
+  <p>
+    L’infrastructure est surveillée en continu pour assurer disponibilité et performance,
+    grâce à une supervision centralisée et des alertes proactives sur l’ensemble des services
+    critiques.
+  </p>
+  <ul>
+    <li>Surveillance détaillée de la CPU, RAM et stockage des serveurs</li>
+    <li>Alertes e-mail et notifications en cas de seuil critique</li>
+    <li>Dashboard IT centralisé offrant une vision complète de l’état du système</li>
+    <li>Suivi de la disponibilité des services et des accès distants</li>
+    <li>Rapports réguliers pour anticiper les incidents et planifier la maintenance</li>
+  </ul>
+</section>
+
+<section id="pra" class="project-section alt">
+  <h2>PCA & Plan de Reprise d’Activité</h2>
+  <p>
+    Le site de Monaco assure la continuité de l’activité en hébergeant les serveurs de secours,
+    permettant une bascule rapide en cas d’incident majeur sur le site principal de Londres.
+    L’infrastructure garantit un objectif RPO de 36h et un RTO de 48h, assurant ainsi
+    la disponibilité des services critiques et la protection des données.
+  </p>
+</section>
+
+<section id="results" class="project-section">
+  <h2>Résultats</h2>
+  <p>
+    Le projet a permis d’atteindre une infrastructure stable et résiliente, avec une haute disponibilité des services multi-sites. 
+    L’automatisation des déploiements et des tâches de supervision a réduit les interventions manuelles et optimisé la gestion quotidienne.
+    La centralisation et la sécurisation des services ont également amélioré la productivité et la sécurité des utilisateurs nomades.
+  </p>
+</section>
+
+<section id="learning" class="project-section">
+  <h2>Ce que j’ai appris</h2>
+  <p>
+    Ce projet m’a permis de renforcer ma posture d’ingénieur en infrastructures, en intégrant
+    la conception, la sécurisation et l’automatisation d’environnements multi-sites. 
+    J’ai acquis une meilleure maîtrise des architectures hybrides, de la virtualisation,
+    des outils de supervision et de la gestion de la continuité de service.
+  </p>
+</section>
+
+</main>
+
+<!-- CONTACT -->
+<section id="contact" class="section alt">
+  <h3>Contact</h3>
+
+  <p class="contact-text">
+    Une idée à concrétiser ? Un poste à proposer ? Ou simplement un petit bonjour ?
+    Faisons le premier pas, contactons-nous !
+  </p>
+
+  <div class="contact-card">
+    <p><i class="fa-solid fa-envelope"></i> jonathanjacob129@gmail.com</p>
+    <p><i class="fa-brands fa-linkedin"></i> LinkedIn</p>
+    <p><i class="fa-brands fa-github"></i> GitHub</p>
+
+    <div class="hero-buttons">
+      <a href="mailto:jonathanjacob129@gmail.com">M’envoyer un message</a>
+      <a href="../../assets/Jonathan_Jacob_CV.pdf" target="_blank">Télécharger CV</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © Jonathan JACOB SELVARATHINAM — Administrateur Systèmes & Cloud
+</footer>
+
+<script>
+  // Animation apparition des sections
+  const sections = document.querySelectorAll(".project-section");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => observer.observe(section));
+
+  // Zoom images
+  document.querySelectorAll(".screen-block img").forEach(img => {
+    img.addEventListener("click", () => {
+      img.classList.toggle("zoomed");
+    });
+  });
+
+  const navLinks = document.querySelectorAll("nav a[href^='#']");
+
+  // Fonction pour activer le lien sur scroll
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 150; // ajuster si navbar fixe
+      const sectionHeight = section.offsetHeight;
+
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  });
+
+</script>
+
+</body>
+</html>
